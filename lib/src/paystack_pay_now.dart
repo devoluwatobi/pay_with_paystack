@@ -126,6 +126,19 @@ class _PaystackPayNowState extends State<PaystackPayNow> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(
+              Icons.close,
+              color: Theme.of(context).colorScheme.onBackground,
+            )),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.transparent,
+      ),
       body: SafeArea(
         child: FutureBuilder<PaystackRequestResponse>(
           future: _makePaymentRequest(),
